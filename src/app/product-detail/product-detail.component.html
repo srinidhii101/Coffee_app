@@ -1,0 +1,54 @@
+<div class="main">
+  <img
+    class="main__hero"
+    src="https://assets.codepen.io/t-1/nathan-dumlao-6VhPY27jdps-unsplash.jpg"
+  />
+  <div class="main__container">
+    <div class="main__title">Coffee</div>
+    <div class="main__prices">
+      <div class="main__price">Small $2</div>
+      <div class="main__price">Normal $3</div>
+      <div class="main__price">Large $4</div>
+    </div>
+
+    <div class="main__product">
+      <span class="main__product-title"> {{ selectedCoffee.blend_name }}</span>
+      <span
+        class="main__product-text"
+        style="font-size: 17px; font-style: normal; font-weight: 700"
+      >
+        <button class="coffeeBtn">Ingredients</button>
+        {{ selectedCoffee.notes.toString() }}
+      </span>
+      <span
+        class="main__product-text"
+        style="font-size: 17px; font-style: normal; font-weight: 700"
+      >
+        <button class="coffeeBtn">Variety</button>
+        {{ selectedCoffee.variety }}
+      </span>
+      <span
+        class="main__product-text"
+        style="font-size: 17px; font-style: normal; font-weight: 700"
+      >
+        <button class="coffeeBtn">Intensifier</button>
+        {{ selectedCoffee.intensifier }}
+      </span>
+      <span
+        class="main__product-text"
+        style="font-size: 17px; font-style: normal; font-weight: 700"
+      >
+        <button class="coffeeBtn">Origin</button>
+        {{ selectedCoffee.origin }}
+      </span>
+    </div>
+  </div>
+  <!-- <div class="PageSwitchingContainer">
+      <button (click)="previousPage()">Previous Page</button>
+      <button (click)="nextPage()">Next Page</button>
+    </div> -->
+</div>
+<!-- origin?:string;
+    variety?:string;
+    notes?:string;
+    intensifier?:string -->

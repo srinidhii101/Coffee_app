@@ -1,0 +1,354 @@
+$latte: #f1dfd1;
+$coffee: #4c4c4c;
+$black: #000;
+
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
+
+$fontTitle: "Special Elite", cursive;
+$fontText: "Mukta", sans-serif;
+
+body {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+
+  background-color: $latte;
+  box-sizing: border-box;
+
+  @media (min-width: 900px) {
+    padding: 2rem;
+  }
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0 0 100px $coffee;
+}
+
+.header,
+.footer {
+  background-color: $coffee;
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 0;
+
+  @media (min-width: 800px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  &__slogan,
+  &__hours {
+    flex: 1;
+  }
+
+  &__slogan {
+    text-align: left;
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: 2px;
+    font-family: $fontTitle;
+    color: $latte;
+    margin-bottom: 1rem;
+
+    @media (min-width: 800px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__hours {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__open {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-bottom: 1rem;
+    font-family: $fontText;
+    font-size: 18px;
+    color: $latte;
+  }
+
+  & &__logo {
+    width: 250px;
+    height: 250px;
+    z-index: 1;
+    margin-bottom: 1rem;
+
+    @media (min-width: 800px) {
+      margin-bottom: 0;
+    }
+  }
+  &__title {
+    position: relative;
+    display: block;
+    font-family: $fontTitle;
+    color: $coffee;
+    background-color: $latte;
+    font-size: 48px;
+    width: 250px;
+    max-width: 100%;
+    height: 250px;
+    padding-top: 2rem;
+    border-radius: 50%;
+    text-align: center;
+    text-transform: uppercase;
+    box-shadow: 0 0 1rem $black;
+
+    &::after {
+      position: absolute;
+      top: 0.5rem;
+      bottom: 0.5rem;
+      left: 0.5rem;
+      right: 0.5rem;
+      border: 0.5rem solid $coffee;
+      border-radius: 50%;
+      content: "";
+    }
+  }
+
+  &__ribbon {
+    display: block;
+    position: relative;
+    width: 250px;
+    color: $coffee;
+    background-color: $latte;
+    margin-top: -4.5rem;
+    box-shadow: 0 2px 6px $black;
+
+    &::after,
+    &::before {
+      content: "";
+      width: 3px;
+      bottom: 1rem;
+      position: absolute;
+      display: block;
+      border: 1rem solid $latte;
+      z-index: -2;
+      box-shadow: 0 8px 6px -6px $black;
+    }
+
+    &::before {
+      left: -42px;
+      border-right-width: 3rem;
+      border-left-color: transparent;
+    }
+
+    &::after {
+      right: -42px;
+      border-left-width: 3rem;
+      border-right-color: transparent;
+    }
+
+    &-text {
+      width: 100%;
+      font-size: 32px;
+      line-height: 36px;
+      letter-spacing: 5px;
+      text-align: center;
+      font-family: $fontText;
+
+      &::before,
+      &::after {
+        content: "";
+        bottom: 100%;
+        position: absolute;
+        display: block;
+        border-style: solid;
+        z-index: -1;
+      }
+
+      &::before {
+        left: 0;
+        border-width: 0px 0px 1.5rem 1.5rem;
+        border-color: transparent transparent $coffee transparent;
+      }
+
+      &::after {
+        right: 0;
+        border-width: 1.5rem 0px 0px 1.5rem;
+        border-color: transparent transparent transparent $coffee;
+      }
+    }
+  }
+}
+
+.PageSwitchingContainer {
+  z-index: 12;
+  background-color: transparent;
+  button {
+    background-color: #6f5050;
+    color: white;
+    border: 1px solid white;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: $fontText;
+  }
+}
+
+.coffeeBtn{
+    background-color: #6f5050;
+    color: white;
+    border: 1px solid white;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: $fontText;
+}
+
+.main {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  background-color: $latte;
+  padding: 1rem;
+
+  &__hero {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.1;
+    z-index: 0;
+  }
+
+  &__container {
+    width: 100%;
+    padding: 2rem;
+    z-index: 12;
+    background-color: transparent;
+
+    @media (min-width: 800px) {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    border-bottom: 0.2rem solid $coffee;
+    font-size: 32px;
+    letter-spacing: 2px;
+    font-family: $fontTitle;
+    color: $coffee;
+    text-transform: uppercase;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    text-align: right;
+  }
+
+  &__prices {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  &__price {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    padding: 2rem;
+    margin: 0.5rem;
+    background-color: $coffee;
+    border-radius: 50%;
+    color: $latte;
+    font-family: $fontText;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+
+    &::after {
+      position: absolute;
+      top: 0.2rem;
+      bottom: 0.2rem;
+      left: 0.2rem;
+      right: 0.2rem;
+      border: 0.2rem solid $latte;
+      border-radius: 50%;
+      content: "";
+    }
+  }
+  &__product:not(:last-of-type) {
+    margin-bottom: 1.5rem;
+  }
+  &__product {
+    display: flex;
+    flex-direction: column;
+    font-family: $fontText;
+    color: $coffee;
+
+    &-title {
+      font-size: 26px;
+      margin-bottom: 0.5rem;
+    }
+
+    &-text {
+      font-style: italic;
+    }
+  }
+}
+
+.footer {
+  &__brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 24px;
+    font-family: $fontText;
+    color: $latte;
+    margin-bottom: 1rem;
+  }
+
+  &__adress {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .adress-icon {
+    fill: $latte;
+    width: 20px;
+    margin-right: 1rem;
+  }
+
+  .adress-text {
+    font-size: 20px;
+    font-family: $fontText;
+    color: $latte;
+  }
+}

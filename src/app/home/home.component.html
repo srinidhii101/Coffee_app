@@ -1,0 +1,27 @@
+<div class="main">
+  <img
+    class="main__hero"
+    src="https://assets.codepen.io/t-1/nathan-dumlao-6VhPY27jdps-unsplash.jpg"
+  />
+  <div class="main__container">
+    <div class="main__title">Coffee</div>
+    <div class="main__prices">
+      <div class="main__price">Small $2</div>
+      <div class="main__price">Normal $3</div>
+      <div class="main__price">Large $4</div>
+    </div>
+
+    <div
+      class="main__product"
+      *ngFor="let item of data | slice: start:end"
+      (click)="clickCoffee(item)"
+    >
+      <span class="main__product-title">{{ item.blend_name }}</span
+      ><span class="main__product-text">{{ item.notes?.toString() }}</span>
+    </div>
+  </div>
+  <div class="PageSwitchingContainer">
+    <button (click)="previousPage()">Previous Page</button>
+    <button (click)="nextPage()">Next Page</button>
+  </div>
+</div>
